@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import time
 import urllib.request, json 
 from collections import OrderedDict
 
@@ -22,6 +23,9 @@ try:
 
 except Exception as e:
     print(e)
+
+# Last change
+template['state']['lastchange'] = int(time.time())
 
 with open('spaceapi.json', 'w') as outfile:
     json.dump(template, outfile, indent=4)
