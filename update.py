@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 
 import time
-import urllib.request, json 
+import urllib.request
+import json
 from collections import OrderedDict
 
 template = None

@@ -10,3 +10,4 @@ install:
 script:
   - ./update.py
   - jsonschema -i spaceapi.json schema-13.json 
+  - flake8 .
