@@ -23,5 +23,5 @@ try:
 except Exception as e:
     print(e)
 
-with open('spacestatus.json', 'w') as outfile:
+with open('spaceapi.json', 'w') as outfile:
     json.dump(template, outfile, indent=4)
