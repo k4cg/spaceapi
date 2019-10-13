@@ -3,6 +3,7 @@
 import time
 import urllib.request
 import json
+import traceback
 from collections import OrderedDict
 
 template = None
@@ -18,11 +19,24 @@ try:
         elif data['door'] == 'closed':
             template['state']['open'] = False
 
-        template['sensors']['temperature'][0]['value'] = data['temperature']
-        template['sensors']['humidity'][0]['value'] = data['humidity']
-        template['sensors']['network_connections'][0]['value'] = data['online']
+        template['sensors']['temperature'].append({
+            'value': data['temperature'],
+            'unit': '°C',
+            'location': 'Inside'
+        })
+
+        template['sensors']['humidity'].append({
+            'value': data['humidity'],
+            'unit': '%',
+            'location': 'Inside'
+        })
+
+        template['sensors']['network_connections'].append(
+            {'value': data['online']}
+        )
 
 except Exception as e:
+    traceback.print_exc()
     print(e)
 
 # Last change

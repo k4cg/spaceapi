@@ -27,24 +27,8 @@
         "open": null
     },
     "sensors": {
-        "temperature": [
-            {
-                "value": 0,
-                "unit": "°C",
-                "location": "Inside"
-            }
-        ],
-        "humidity": [
-            {
-                "value": 0,
-                "unit": "%",
-                "location": "Inside"
-            }
-        ],
-        "network_connections": [
-            {
-                "value": -1
-            }
-        ]
+        "temperature": [],
+        "humidity": [],
+        "network_connections": []
     }
 }
